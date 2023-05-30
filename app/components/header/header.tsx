@@ -15,7 +15,7 @@ const Header = () => {
           <li>
             <Image src={Logo} alt="Logo" />
           </li>
-          <li className="hidden md:flex gap-x-4">
+          <li className="hidden md:flex gap-x-4 md:text-2xl">
             {data.map((item) => {
               return (
                 <ActiveLink key={item.id} href={item.route}>
