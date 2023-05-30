@@ -19,10 +19,8 @@ const Header = () => {
           <div className="hidden md:flex justify-center gap-x-4">
             {data.map((item) => {
               return (
-                <li className="md:text-2xl">
-                  <ActiveLink key={item.id} href={item.route}>
-                    {item.name}
-                  </ActiveLink>
+                <li key={item.id} className="md:text-2xl">
+                  <ActiveLink href={item.route}>{item.name}</ActiveLink>
                 </li>
               );
             })}

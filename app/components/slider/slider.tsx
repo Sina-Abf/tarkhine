@@ -32,12 +32,12 @@ export default function App() {
         height={1000}
       />
       <div className=" flex flex-col items-center">
-        <h2 className="text-xl sm:text-3xl lg:text-5xl font-bold absolute top-1/3 right-1/2 xs:top-[40%] translate-x-1/2">
+        <h2 className="text-xl whitespace-nowrap sm:text-3xl lg:text-5xl font-bold absolute top-1/3 right-1/2 xs:top-[40%] translate-x-1/2">
           تجربه غذای سالم و گیاهی به سبک ترخینه
         </h2>
         <Button
           size="small"
-          className="absolute top-2/3 xs:top-[60%] right-1/2 translate-x-1/2 lg:top-[60%]"
+          className="absolute top-1/2 xs:top-[60%] right-1/2 translate-x-1/2 lg:top-[60%]"
         >
           سفارش آنلاین غذا
         </Button>
@@ -79,7 +79,7 @@ export default function App() {
         )}
       </div>
       {loaded && instanceRef.current && (
-        <div className="-translate-y-[100%] h-[1.5rem] md:h-[2.5rem] px-4 items-center rounded-tl-md rounded-tr-md absolute right-1/2 translate-x-1/2 bg-white flex justify-center w-fit radius-custom">
+        <div className="-translate-y-[90%] h-[1.5rem] md:h-[2.5rem] px-4 items-center rounded-tl-md rounded-tr-md absolute right-1/2 translate-x-1/2 bg-white flex justify-center w-fit radius-custom">
           {[
             // @ts-ignore
             ...Array(instanceRef.current.track.details.slides.length).keys(),

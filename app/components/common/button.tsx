@@ -9,7 +9,7 @@ const button = cva('button', {
         'rounded-lg',
         'transition-all',
         'duration-300',
-        'hover:bg-tint-2',
+        'hover:bg-shade-2',
       ],
       secondary: [
         'bg-tint-1',
