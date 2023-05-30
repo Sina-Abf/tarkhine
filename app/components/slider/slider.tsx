@@ -2,11 +2,7 @@
 import React, { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-import Image from 'next/image';
-import bgDesktop from '../../../public/images/slider-desktop.png';
-import bgMobile from '../../../public/images/slider-mobile.png';
-import useMediaQuery from '@/hooks/use-media-query';
-import { Button } from '../common/button';
+import SliderImage from './slider-image';
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -22,39 +18,20 @@ export default function App() {
   });
 
   // Small Screen Breakpoint
-  const isSmallScreen = useMediaQuery('(max-width: 600px)');
-
-  const imageChoose = (
-    <div className="relative">
-      <Image
-        src={isSmallScreen ? bgMobile : bgDesktop}
-        alt="desktop-food-picture"
-        height={1000}
-      />
-      <div className=" flex flex-col items-center">
-        <h2 className="text-xl whitespace-nowrap sm:text-3xl lg:text-5xl font-bold absolute top-1/3 right-1/2 xs:top-[40%] translate-x-1/2">
-          تجربه غذای سالم و گیاهی به سبک ترخینه
-        </h2>
-        <Button
-          size="small"
-          className="absolute top-1/2 xs:top-[60%] right-1/2 translate-x-1/2 lg:top-[60%]"
-        >
-          سفارش آنلاین غذا
-        </Button>
-      </div>
-    </div>
-  );
 
   return (
     <>
       <div className="navigation-wrapper">
         <div ref={sliderRef} className="keen-slider">
-          <div className="keen-slider__slide number-slide1">{imageChoose}</div>
-          <div className="keen-slider__slide number-slide2">{imageChoose}</div>
-          <div className="keen-slider__slide number-slide3">{imageChoose}</div>
-          <div className="keen-slider__slide number-slide4">{imageChoose}</div>
-          <div className="keen-slider__slide number-slide5">{imageChoose}</div>
-          <div className="keen-slider__slide number-slide6">{imageChoose}</div>
+          <div className="keen-slider__slide number-slide1">
+            <SliderImage />
+          </div>
+          <div className="keen-slider__slide number-slide1">
+            <SliderImage />
+          </div>
+          <div className="keen-slider__slide number-slide1">
+            <SliderImage />
+          </div>
         </div>
         {loaded && instanceRef.current && (
           <>
