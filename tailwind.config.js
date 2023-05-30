@@ -53,6 +53,9 @@ module.exports = {
         'warning-Light': '#f4b740',
         'warning-Extralight': '#fff8e1',
       },
+      screens: {
+        xs: '450px',
+      },
     },
   },
   plugins: [],

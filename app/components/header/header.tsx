@@ -15,20 +15,22 @@ const Header = () => {
           <li>
             <Image src={Logo} alt="Logo" />
           </li>
-          <li className="hidden md:flex gap-x-4 md:text-2xl">
+          <div className="hidden md:flex justify-center gap-x-4">
             {data.map((item) => {
               return (
-                <ActiveLink key={item.id} href={item.route}>
-                  {item.name}
-                </ActiveLink>
+                <li className="md:text-2xl">
+                  <ActiveLink key={item.id} href={item.route}>
+                    {item.name}
+                  </ActiveLink>
+                </li>
               );
             })}
-          </li>
+          </div>
           <li className="flex gap-x-2">
-            <button className="bg-tint-1 fill-primary p-4 rounded-sm hover:bg-primary hover:fill-white">
+            <button className="bg-tint-1 fill-primary p-4 rounded-lg hover:bg-primary hover:fill-white w-[40px] h-[40px] md:w-[45px] md:h-[45px] transition-colors duration-300">
               <CartIcon />
             </button>
-            <button className="bg-tint-1 fill-primary p-4 rounded-sm hover:bg-primary hover:fill-white">
+            <button className="bg-tint-1 fill-primary p-4 rounded-lg hover:bg-primary hover:fill-white w-[40px] h-[40px] md:w-[45px] md:h-[45px] transition-colors duration-300">
               <UserIcon />
             </button>
           </li>

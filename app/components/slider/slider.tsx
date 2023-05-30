@@ -20,25 +20,21 @@ export default function App() {
     },
   });
 
-  const isSmallScreen = useMediaQuery('(max-width: 338px)');
+  // Small Screen Breakpoint
+  const isSmallScreen = useMediaQuery('(max-width: 600px)');
 
-  const imageChoose = isSmallScreen ? (
+  const imageChoose = (
     <div className="relative">
-      <Image src={bgMobile} alt="desktop-food-picture" />
-      <div className="absolute top-1/4 right-1/2 translate-x-1/2">
-        <h2 className="text-xl md:text-2xl lg:text-5xl font-bold">
+      <Image
+        src={isSmallScreen ? bgMobile : bgDesktop}
+        alt="desktop-food-picture"
+        height={1000}
+      />
+      <div className=" flex flex-col items-center">
+        <h2 className="text-xl sm:text-3xl lg:text-5xl font-bold absolute top-1/3 right-1/2 xs:top-[40%] translate-x-1/2">
           تجربه غذای سالم و گیاهی به سبک ترخینه
         </h2>
-      </div>
-    </div>
-  ) : (
-    <div className="relative">
-      <Image src={bgDesktop} alt="desktop-food-picture" />
-      <div className="absolute top-1/2 right-1/2 translate-x-1/2 flex flex-col items-center">
-        <h2 className="text-xl md:text-2xl lg:text-5xl font-bold mb-12">
-          تجربه غذای سالم و گیاهی به سبک ترخینه
-        </h2>
-        <button className="bg-primary text-white p-4 px-6 text-2xl rounded-lg hover:bg-shade-2 transition-colors duration-300">
+        <button className="bg-primary absolute top-2/3 xs:top-[60%] right-1/2 translate-x-1/2 text-white p-2 md:p-4 md:px-6 text-xl lg:text-2xl lg:top-[60%] rounded-lg hover:bg-shade-2 transition-all duration-300">
           سفارش آنلاین غذا
         </button>
       </div>
