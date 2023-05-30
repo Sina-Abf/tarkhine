@@ -1,9 +1,10 @@
 'use client';
 import Image from 'next/image';
 import Logo from '@/public/images/green-small-logo.png';
-import { CartIcon, HamburgerIcon, UserIcon } from '@/public/icons';
+import { CartIcon, HamburgerIcon, SearchIcon, UserIcon } from '@/public/icons';
 import data from '@/public/fake-db/header.json';
 import ActiveLink from '@/helpers/active-link';
+import { Button } from '../common/button';
 const Header = () => {
   return (
     <header className="">
@@ -26,13 +27,25 @@ const Header = () => {
               );
             })}
           </div>
-          <li className="flex gap-x-2">
-            <button className="bg-tint-1 fill-primary p-4 rounded-lg hover:bg-primary hover:fill-white w-[40px] h-[40px] md:w-[45px] md:h-[45px] transition-colors duration-300">
+          <li className="flex gap-x-4">
+            <Button
+              variant="secondary"
+              className="p-2 fill-primary hover:fill-white w-[30px] h-[30px] md:w-[40px] md:h-[40px] md:p-3 hidden md:block"
+            >
+              <SearchIcon />
+            </Button>
+            <Button
+              variant="secondary"
+              className="p-2 fill-primary hover:fill-white w-[30px] h-[30px] md:w-[40px] md:h-[40px] md:p-3"
+            >
               <CartIcon />
-            </button>
-            <button className="bg-tint-1 fill-primary p-4 rounded-lg hover:bg-primary hover:fill-white w-[40px] h-[40px] md:w-[45px] md:h-[45px] transition-colors duration-300">
+            </Button>
+            <Button
+              variant="secondary"
+              className="p-2 fill-primary hover:fill-white w-[30px] h-[30px] md:w-[40px] md:h-[40px] md:p-3"
+            >
               <UserIcon />
-            </button>
+            </Button>
           </li>
         </ul>
       </nav>

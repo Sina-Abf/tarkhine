@@ -6,6 +6,7 @@ import Image from 'next/image';
 import bgDesktop from '../../../public/images/slider-desktop.png';
 import bgMobile from '../../../public/images/slider-mobile.png';
 import useMediaQuery from '@/hooks/use-media-query';
+import { Button } from '../common/button';
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -34,9 +35,12 @@ export default function App() {
         <h2 className="text-xl sm:text-3xl lg:text-5xl font-bold absolute top-1/3 right-1/2 xs:top-[40%] translate-x-1/2">
           تجربه غذای سالم و گیاهی به سبک ترخینه
         </h2>
-        <button className="bg-primary absolute top-2/3 xs:top-[60%] right-1/2 translate-x-1/2 text-white p-2 md:p-4 md:px-6 text-xl lg:text-2xl lg:top-[60%] rounded-lg hover:bg-shade-2 transition-all duration-300">
+        <Button
+          size="small"
+          className="absolute top-2/3 xs:top-[60%] right-1/2 translate-x-1/2 lg:top-[60%]"
+        >
           سفارش آنلاین غذا
-        </button>
+        </Button>
       </div>
     </div>
   );
