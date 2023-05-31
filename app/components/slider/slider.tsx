@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import SliderImage from './slider-image';
+
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
@@ -16,8 +17,6 @@ export default function App() {
       setLoaded(true);
     },
   });
-
-  // Small Screen Breakpoint
 
   return (
     <>

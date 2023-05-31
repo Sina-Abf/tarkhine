@@ -6,6 +6,7 @@ import { Button } from '../common/button';
 
 const SliderImage = () => {
   const isBigScreen = useMediaQuery('(min-width: 600px)');
+  const isSmallScreen = useMediaQuery('(max-width: 600px)');
 
   return (
     <>
@@ -25,7 +26,7 @@ const SliderImage = () => {
           </div>
         </div>
       )}
-      {!isBigScreen && (
+      {isSmallScreen && (
         <div className="relative">
           <Image height={1500} src={bgMobile} alt="desktop-food-picture" />
           <div className=" flex flex-col items-center">
