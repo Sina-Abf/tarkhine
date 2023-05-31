@@ -5,6 +5,10 @@ import localFont from 'next/font/local';
 const estedadFont = localFont({
   src: [
     {
+      path: '../public/fonts/Estedad-Light.ttf',
+      weight: '300',
+    },
+    {
       path: '../public/fonts/Estedad-Regular.woff2',
       weight: '400',
     },

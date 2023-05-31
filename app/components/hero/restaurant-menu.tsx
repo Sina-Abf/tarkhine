@@ -1,7 +1,7 @@
-import pishGhaza from '../../../public/images/pish-ghaza.png';
-import ghazayeAsli from '../../../public/images/ghazaye-asli.png';
-import drink from '../../../public/images/drink.png';
-import dessert from '../../../public/images/dessert.png';
+import pishGhaza from '../../../public/images/menu/pish-ghaza.png';
+import ghazayeAsli from '../../../public/images/menu/ghazaye-asli.png';
+import drink from '../../../public/images/menu/drink.png';
+import dessert from '../../../public/images/menu/dessert.png';
 import Image from 'next/image';
 import { Button } from '../common/button';
 

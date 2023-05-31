@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import Logo from '@/public/images/green-small-logo.png';
+import Logo from '@/public/images/logo/green-small-logo.png';
 import { CartIcon, HamburgerIcon, SearchIcon, UserIcon } from '@/public/icons';
 import data from '@/public/fake-db/header.json';
 import ActiveLink from '@/helpers/active-link';

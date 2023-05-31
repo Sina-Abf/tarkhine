@@ -54,7 +54,8 @@ module.exports = {
         'warning-Extralight': '#fff8e1',
       },
       screens: {
-        xs: '450px',
+        xs: '360px',
+        aboutSectionSize: '800px',
       },
     },
   },

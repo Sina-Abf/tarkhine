@@ -1,7 +1,7 @@
 import useMediaQuery from '@/hooks/use-media-query';
 import Image from 'next/image';
-import bgDesktop from '../../../public/images/slider-desktop.png';
-import bgMobile from '../../../public/images/slider-mobile.png';
+import bgDesktop from '../../../public/images/slider/slider-desktop.png';
+import bgMobile from '../../../public/images/slider/slider-mobile.png';
 import { Button } from '../common/button';
 
 const SliderImage = () => {
