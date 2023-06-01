@@ -15,6 +15,7 @@ const Header = () => {
     <header className="">
       {modalShow && (
         <Modal
+          className="hidden md:block"
           title="جستجو"
           content={<Search />}
           description="لطفا متن خود را تایپ و سپس دکمه Enter را بزنید."

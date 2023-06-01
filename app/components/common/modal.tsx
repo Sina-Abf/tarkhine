@@ -1,11 +1,13 @@
 import { useState, Fragment, Dispatch, SetStateAction } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { CloseIcon } from '@/public/icons';
+import classNames from 'classnames';
 
 interface TModal {
   title: string;
   description: string;
   content: React.ReactNode;
+  className?: string;
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
@@ -22,7 +24,10 @@ export default function Modal(props: TModal) {
       leaveTo="transform scale-95 opacity-0"
       as={Fragment}
     >
-      <Dialog className="relative z-50" onClose={() => props.setIsOpen(false)}>
+      <Dialog
+        className={classNames('relative z-50', props.className)}
+        onClose={() => props.setIsOpen(false)}
+      >
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-[2px]"
           aria-hidden="true"
