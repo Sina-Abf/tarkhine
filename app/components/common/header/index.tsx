@@ -4,7 +4,7 @@ import Logo from '@/public/images/logo/green-small-logo.png';
 import { CartIcon, HamburgerIcon, SearchIcon, UserIcon } from '@/public/icons';
 import data from '@/public/fake-db/header.json';
 import ActiveLink from '@/helpers/active-link';
-import { Button } from '../common/button';
+import { Button } from '../button';
 const Header = () => {
   return (
     <header className="">

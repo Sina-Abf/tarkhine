@@ -1,4 +1,5 @@
-import Header from './components/header';
+import Footer from './components/common/footer';
+import Header from './components/common/header';
 import './globals.css';
 import localFont from 'next/font/local';
 
@@ -40,11 +41,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body
-        className={`${estedadFont.className} container mx-auto max-w-[1440px] w-full`}
-      >
+      <body className={`${estedadFont.className} container mx-auto  w-full`}>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

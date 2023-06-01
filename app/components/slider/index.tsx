@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <>
-      <div className="navigation-wrapper">
+      <div className="navigation-wrapper ">
         {show ? (
           <Skeleton className="h-[200px] md:h-[335px]" baseColor="#cbcbcb" />
         ) : (

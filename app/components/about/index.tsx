@@ -77,7 +77,7 @@ const About = () => {
             </Button>
           </div>
           {/* Small Size IconSet */}
-          <ul className=" grid grid-cols-2 place-items-center h-1/2 md:mt-14 aboutSectionSize:hidden">
+          <ul className="grid grid-cols-2 place-items-center h-1/2 md:mt-14 aboutSectionSize:hidden">
             {DATA.map(({ icon, name, id }) => (
               <li key={id} className="flex flex-col items-center h-fit">
                 <span className="w-[25px] h-[25px] fill-white">{icon}</span>
