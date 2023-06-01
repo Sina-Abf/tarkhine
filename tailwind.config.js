@@ -56,6 +56,7 @@ module.exports = {
       screens: {
         xs: '360px',
         aboutSectionSize: '800px',
+        sliderSize: '600px',
       },
     },
   },

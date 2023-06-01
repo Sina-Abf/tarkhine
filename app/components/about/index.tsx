@@ -10,7 +10,6 @@ import {
   QualityIcon,
   UserIcon,
 } from '@/public/icons';
-import useMediaQuery from '@/hooks/use-media-query';
 
 const DATA = [
   {
@@ -36,16 +35,24 @@ const DATA = [
 ];
 
 const About = () => {
-  const isBigScreen = useMediaQuery('(min-width: 800px)');
-  const isSmallScreen = useMediaQuery('(max-width: 800px)');
   return (
     <div className="relative w-full font-thin">
-      {isSmallScreen && (
-        <Image width={800} height={800} src={bgMobile} alt="about-bg" />
-      )}
-      {isBigScreen && (
-        <Image width={1700} height={1700} src={bgDesktop} alt="about-bg" />
-      )}
+      {/* Mobile Image */}
+      <Image
+        width={800}
+        height={800}
+        src={bgMobile}
+        alt="about-bg"
+        className="aboutSectionSize:hidden"
+      />
+      {/* Desktop Image */}
+      <Image
+        width={1700}
+        height={1700}
+        src={bgDesktop}
+        alt="about-bg"
+        className="hidden aboutSectionSize:block"
+      />
       <div className="p-8 absolute top-0 text-white flex flex-col items-center w-full h-full justify-around aboutSectionSize:flex-row">
         <div>
           <h2 className="text-3xl mb-2 aboutSectionSize:text-4xl">
