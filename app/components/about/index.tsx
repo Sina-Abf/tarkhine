@@ -39,19 +39,15 @@ const About = () => {
     <div className="relative w-full font-thin">
       {/* Mobile Image */}
       <Image
-        width={800}
-        height={800}
         src={bgMobile}
         alt="about-bg"
-        className="aboutSectionSize:hidden"
+        className="aboutSectionSize:hidden w-full h-full"
       />
       {/* Desktop Image */}
       <Image
-        width={1700}
-        height={1700}
         src={bgDesktop}
         alt="about-bg"
-        className="hidden aboutSectionSize:block"
+        className="hidden aboutSectionSize:block w-full h-full"
       />
       <div className="p-8 absolute top-0 text-white flex flex-col items-center w-full h-full justify-around aboutSectionSize:flex-row">
         <div>

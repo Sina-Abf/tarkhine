@@ -16,8 +16,8 @@ const Footer = () => {
     <footer className="footer-image pb-20">
       <div className="text-white flex justify-around p-8">
         <div className="flex-1">
-          <h2 className="text-xl mb-4 md:text-2xl">دسترسی آسان</h2>
-          <ul className="p-2 space-y-2 md:space-y-4 md:text-2xl">
+          <h2 className="text-xl mb-4 md:text-3xl font-bold">دسترسی آسان</h2>
+          <ul className="p-2 space-y-2 md:space-y-4 md:text-2xl [&_li]:cursor-pointer [&_li]:w-fit">
             <li>پرسش‌های متداول</li>
             <li>قوانین ترخینه</li>
             <li>حریم خصوصی</li>
@@ -35,8 +35,10 @@ const Footer = () => {
           </ul>
         </div>
         <div className="flex-1">
-          <h2 className="text-xl mb-4 md:text-2xl">شعبه‌های ترخینه</h2>
-          <ul className="p-2 space-y-2 md:space-y-4 md:text-2xl">
+          <h2 className="text-xl mb-4 md:text-3xl font-bold">
+            شعبه‌های ترخینه
+          </h2>
+          <ul className="p-2 space-y-2 md:space-y-4 md:text-2xl [&_li]:cursor-pointer [&_li]:w-fit">
             <li>شعبه اکباتان</li>
             <li>شعبه چالوس</li>
             <li>شعبه اقدسیه</li>
@@ -44,7 +46,7 @@ const Footer = () => {
           </ul>
         </div>
         <form className="flex-1 hidden md:block md:ml-14">
-          <h2 className="text-xl mb-4 md:text-2xl">پیام به ترخینه</h2>
+          <h2 className="text-xl mb-4 md:text-3xl font-bold">پیام به ترخینه</h2>
           <div className="flex gap-4">
             <div className="relative flex flex-col gap-4 w-full">
               <Input placeholder="نام و نام خانوادگی" />

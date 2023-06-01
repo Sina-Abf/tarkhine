@@ -41,7 +41,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body className={`${estedadFont.className} container mx-auto  w-full`}>
+      <body
+        className={`${estedadFont.className} mx-auto w-full max-w-screen-2xl`}
+      >
         <Header />
         <main>{children}</main>
         <Footer />
