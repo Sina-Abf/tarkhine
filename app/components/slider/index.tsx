@@ -1,8 +1,10 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
 import SliderImage from './slider-image';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -18,20 +20,31 @@ export default function App() {
     },
   });
 
+  // Custom delay for skeleton loading slider
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+    setTimeout(() => setShow(false), 1000);
+  }, []);
+
   return (
     <>
       <div className="navigation-wrapper">
-        <div ref={sliderRef} className="keen-slider">
-          <div className="keen-slider__slide number-slide1">
-            <SliderImage />
+        {show ? (
+          <Skeleton className="h-[200px] md:h-[335px]" baseColor="#cbcbcb" />
+        ) : (
+          <div ref={sliderRef} className="keen-slider">
+            <div className="keen-slider__slide number-slide1">
+              <SliderImage />
+            </div>
+            <div className="keen-slider__slide number-slide1">
+              <SliderImage />
+            </div>
+            <div className="keen-slider__slide number-slide1">
+              <SliderImage />
+            </div>
           </div>
-          <div className="keen-slider__slide number-slide1">
-            <SliderImage />
-          </div>
-          <div className="keen-slider__slide number-slide1">
-            <SliderImage />
-          </div>
-        </div>
+        )}
+
         {loaded && instanceRef.current && (
           <>
             <Arrow

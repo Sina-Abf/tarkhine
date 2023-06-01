@@ -59,10 +59,12 @@ const Branches = () => {
                 <div className="mt-10 flex justify-center items-center">
                   <Button
                     variant="transparent"
-                    className="flex transition-all duration-300 opacity-0 group-hover:opacity-100 items-center text-primary border-2 border-primary px-8 py-2 font-semibold"
+                    className="flex transition-all duration-300 opacity-0 group-hover:opacity-100 items-center hover:border-shade-2 border-2 border-primary px-8 py-2 font-semibold"
                   >
-                    <span className="ml-2 text-primary">صفحه شعبه</span>
-                    <span className="w-[18px] h-[18px] fill-primary">
+                    <span className="ml-2 text-primary hover:text-shade-2">
+                      صفحه شعبه
+                    </span>
+                    <span className="w-[18px] h-[18px] fill-primary hover:fill-shade-2">
                       <LeftArrowIcon />
                     </span>
                   </Button>

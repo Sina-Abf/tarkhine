@@ -11,7 +11,6 @@ import {
   UserIcon,
 } from '@/public/icons';
 import useMediaQuery from '@/hooks/use-media-query';
-import classNames from 'classnames';
 
 const DATA = [
   {

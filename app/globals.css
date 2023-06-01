@@ -19,6 +19,15 @@ html {
   position: relative;
 }
 
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+  background: white;
+  transform: translateY(-50%);
+  width: fit-content;
+}
+
 .dot {
   border: none;
   width: 10px;
@@ -51,7 +60,7 @@ html {
 
 .arrow--right {
   left: 5px;
-  transform: rotate(180deg) translateY(40%);
+  transform: rotate(180deg);
 }
 
 .arrow--left {
