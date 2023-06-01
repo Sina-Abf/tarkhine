@@ -32,7 +32,7 @@ const RestaurantMenu = () => {
   return (
     <div className="mt-10 p-10 text-center">
       <h2 className="mb-24 font-bold text-3xl">منوی رستوران</h2>
-      <ul className="grid grid-cols-2 md:grid-cols-4 mx-auto max-w-2xl md:max-w-full lg:grid-cols-4 place-items-center gap-8 md:gap-0">
+      <ul className="grid grid-cols-2 md:grid-cols-4 mx-auto max-w-2xl md:max-w-full place-items-center gap-8 md:gap-0">
         {DATA.map(({ image, name, id }) => (
           <li
             key={id}
