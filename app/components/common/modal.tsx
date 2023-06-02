@@ -1,21 +1,22 @@
-import { useState, Fragment, Dispatch, SetStateAction } from 'react';
+import { Fragment, useContext } from 'react';
 import { Dialog, Transition } from '@headlessui/react';
 import { CloseIcon } from '@/public/icons';
 import classNames from 'classnames';
+import { ModalContext } from '@/store/modal-context';
 
 interface TModal {
   title: string;
   description: string;
   content: React.ReactNode;
   className?: string;
-  isOpen: boolean;
-  setIsOpen: Dispatch<SetStateAction<boolean>>;
 }
 
 export default function Modal(props: TModal) {
+  const { closeModalHandler, isModalOpen } = useContext(ModalContext);
+
   return (
     <Transition
-      show={props.isOpen}
+      show={isModalOpen}
       enter="transition duration-100 ease-out"
       enterFrom="transform scale-95 opacity-0"
       enterTo="transform scale-100 opacity-100"
@@ -26,7 +27,7 @@ export default function Modal(props: TModal) {
     >
       <Dialog
         className={classNames('relative z-50', props.className)}
-        onClose={() => props.setIsOpen(false)}
+        onClose={() => closeModalHandler()}
       >
         <div
           className="fixed inset-0 bg-black/50 backdrop-blur-[2px]"
@@ -36,9 +37,9 @@ export default function Modal(props: TModal) {
         <div className="rounded-lg overflow-hidden fixed bg-white text-black h-fit top-1/2 right-1/2 -translate-y-1/2 translate-x-1/2 flex items-center justify-center ">
           <Dialog.Panel>
             <Dialog.Title className="text-3xl flex justify-between bg-gray-3 w-full text-center p-8 font-semibold">
-              <h3 className="text-center w-full">{props.title}</h3>
+              <span className="text-center w-full">{props.title}</span>
               <button
-                onClick={() => props.setIsOpen(false)}
+                onClick={() => closeModalHandler()}
                 className="w-[25px] h-[25px] fill-gray-7"
               >
                 <CloseIcon />

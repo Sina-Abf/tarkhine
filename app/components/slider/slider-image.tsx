@@ -12,12 +12,14 @@ const SliderImage = () => {
           height={1500}
           src={bgDesktop}
           alt="desktop-food-picture"
+          priority
         />
         <Image
           className="sliderSize:hidden"
           height={1500}
           src={bgMobile}
           alt="mobile-food-picture"
+          priority
         />
 
         <div className=" flex flex-col items-center">

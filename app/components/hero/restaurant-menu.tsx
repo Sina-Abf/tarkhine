@@ -41,7 +41,7 @@ const RestaurantMenu = () => {
             <Image
               width={150}
               height={150}
-              className="-mt-[50%]"
+              className="w-auto h-auto -mt-[50%]"
               src={image}
               alt={name}
             />

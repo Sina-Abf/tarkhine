@@ -1,3 +1,4 @@
+import ModalContextProvider from '@/store/modal-context';
 import Footer from './components/common/footer';
 import Header from './components/common/header';
 import './globals.css';
@@ -41,13 +42,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
-      <body
-        className={`${estedadFont.className} mx-auto w-full max-w-screen-2xl`}
-      >
-        <Header />
-        <main>{children}</main>
-        <Footer />
-      </body>
+      <ModalContextProvider>
+        <body
+          className={`${estedadFont.className} mx-auto w-full max-w-screen-2xl`}
+        >
+          <Header />
+          <main>{children}</main>
+          <Footer />
+        </body>
+      </ModalContextProvider>
     </html>
   );
 }

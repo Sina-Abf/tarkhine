@@ -5,22 +5,21 @@ import { CartIcon, HamburgerIcon, SearchIcon, UserIcon } from '@/public/icons';
 import data from '@/public/fake-db/header.json';
 import ActiveLink from '@/helpers/active-link';
 import { Button } from '../button';
-import { useState } from 'react';
+import { useContext } from 'react';
 import Modal from '../modal';
 import Search from '../search';
+import { ModalContext } from '@/store/modal-context';
 const Header = () => {
-  const [modalShow, setModalShow] = useState(false);
+  const { isModalOpen, openModalHandler } = useContext(ModalContext);
 
   return (
     <header className="">
-      {modalShow && (
+      {isModalOpen && (
         <Modal
           className="hidden md:block"
           title="جستجو"
           content={<Search />}
           description="لطفا متن خود را تایپ و سپس دکمه Enter را بزنید."
-          isOpen={modalShow}
-          setIsOpen={setModalShow}
         />
       )}
       <nav>
@@ -29,7 +28,7 @@ const Header = () => {
             <HamburgerIcon />
           </li>
           <li>
-            <Image src={Logo} alt="Logo" />
+            <Image priority src={Logo} alt="Logo" />
           </li>
           <div className="hidden md:flex justify-center gap-x-4">
             {data.map((item) => {
@@ -44,7 +43,7 @@ const Header = () => {
             <Button
               variant="secondary"
               className="p-2 fill-primary hover:fill-white w-[30px] h-[30px] md:w-[40px] md:h-[40px] md:p-3 hidden md:block"
-              onClick={() => setModalShow((prev) => !prev)}
+              onClick={() => openModalHandler()}
             >
               <SearchIcon />
             </Button>

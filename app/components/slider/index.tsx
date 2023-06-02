@@ -23,7 +23,7 @@ export default function App() {
   // Custom delay for skeleton loading slider
   const [show, setShow] = useState(true);
   useEffect(() => {
-    setTimeout(() => setShow(false), 1000);
+    setTimeout(() => setShow(false), 500);
   }, []);
 
   return (
