@@ -31,12 +31,14 @@ const DATA = [
 const RestaurantMenu = () => {
   return (
     <div className="mt-10 p-10 text-center">
-      <h2 className="mb-24 font-bold text-3xl">منوی رستوران</h2>
+      <h2 className="mb-36 font-bold text-3xl lg:text-4xl xl:text-5xl">
+        منوی رستوران
+      </h2>
       <ul className="grid grid-cols-2 md:grid-cols-4 mx-auto max-w-2xl md:max-w-full place-items-center gap-8 md:gap-0">
         {DATA.map(({ image, name, id }) => (
           <li
             key={id}
-            className="shadow-xl flex flex-col justify-center items-center border-2 rounded-xl border-primary p-2 md:w-[18rem] md:h-[10rem] lg:w-[25rem] mb-20"
+            className="shadow-xl flex flex-col justify-center items-center border-2 rounded-xl border-primary p-2 md:w-[18rem] md:h-[10rem] xl:w-[25rem] mb-20"
           >
             <Image
               width={150}
