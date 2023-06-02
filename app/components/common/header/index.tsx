@@ -8,7 +8,6 @@ import {
   SearchIcon,
   UserIcon,
 } from '@/public/icons';
-import data from '@/public/fake-db/header.json';
 import ActiveLink from '@/helpers/active-link';
 import { Button } from '../button';
 import { useContext, useState } from 'react';
