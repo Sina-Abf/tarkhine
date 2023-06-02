@@ -5,9 +5,11 @@ import { usePathname } from 'next/navigation';
 const ActiveLink = ({
   children,
   href,
+  className,
 }: {
   children: React.ReactNode;
   href: string;
+  className?: string;
 }) => {
   const pathname = usePathname();
 
@@ -16,8 +18,8 @@ const ActiveLink = ({
       href={href}
       className={classNames(
         'text-gray-7',
-        href === pathname &&
-          'text-primary font-bold underline underline-offset-8'
+        href === pathname && 'text-primary font-bold underline',
+        className
       )}
     >
       {children}

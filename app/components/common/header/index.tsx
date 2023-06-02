@@ -1,17 +1,64 @@
 'use client';
 import Image from 'next/image';
 import Logo from '@/public/images/logo/green-small-logo.png';
-import { CartIcon, HamburgerIcon, SearchIcon, UserIcon } from '@/public/icons';
+import {
+  CartIcon,
+  HamburgerIcon,
+  LeftArrowIcon,
+  SearchIcon,
+  UserIcon,
+} from '@/public/icons';
 import data from '@/public/fake-db/header.json';
 import ActiveLink from '@/helpers/active-link';
 import { Button } from '../button';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import Modal from '../modal';
 import Search from '../search';
 import { ModalContext } from '@/store/modal-context';
+import MobileSiderbar from './mobile-sidebar';
+
+const DATA = [
+  {
+    name: 'صفحه اصلی',
+    children: [],
+    route: '/',
+    id: '1',
+  },
+  {
+    name: 'شعبه',
+    children: [{}],
+    route: '#',
+    id: '2',
+  },
+  {
+    name: 'منو',
+    children: [{}],
+    route: '#',
+    id: '3',
+  },
+  {
+    name: 'اعطای نمایندگی',
+    children: [],
+    route: '#',
+    id: '4',
+  },
+  {
+    name: 'درباره ما',
+    children: [],
+    route: '#',
+    id: '5',
+  },
+  {
+    name: 'تماس با ما',
+    children: [],
+    route: '#',
+    id: '6',
+  },
+];
+
 const Header = () => {
   const { isModalOpen, openModalHandler } = useContext(ModalContext);
-
+  const [mobileSidebarShow, setMobileSiderbarShow] = useState(false);
   return (
     <header className="">
       {isModalOpen && (
@@ -23,18 +70,33 @@ const Header = () => {
         />
       )}
       <nav>
+        {mobileSidebarShow && (
+          <MobileSiderbar setMobileSiderbarShow={setMobileSiderbarShow} />
+        )}
         <ul className="p-8 flex justify-between items-center">
           <li className="md:hidden fill-primary">
-            <HamburgerIcon />
+            <button onClick={() => setMobileSiderbarShow(true)}>
+              <HamburgerIcon />
+            </button>
           </li>
           <li>
             <Image priority src={Logo} alt="Logo" />
           </li>
           <div className="hidden md:flex justify-center gap-x-4">
-            {data.map((item) => {
+            {DATA.map((item) => {
               return (
-                <li key={item.id} className="md:text-2xl">
-                  <ActiveLink href={item.route}>{item.name}</ActiveLink>
+                <li key={item.id} className="md:text-2xl ">
+                  <ActiveLink
+                    className="flex gap-x-1 items-center"
+                    href={item.route}
+                  >
+                    {item.name}
+                    {item.children.length ? (
+                      <span className="w-[12px] h-[12px] mt-1 fill-gray-7 -rotate-90">
+                        <LeftArrowIcon />
+                      </span>
+                    ) : null}
+                  </ActiveLink>
                 </li>
               );
             })}
