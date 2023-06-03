@@ -5,8 +5,18 @@ import 'keen-slider/keen-slider.min.css';
 import SliderImage from './slider-image';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { StaticImageData } from 'next/image';
 
-export default function App() {
+interface TSlider {
+  items: {
+    desktopImage: StaticImageData;
+    mobileImage: StaticImageData;
+    title: string;
+    buttonTitle: string;
+  }[];
+}
+
+export default function Slider({ items }: TSlider) {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loaded, setLoaded] = useState(false);
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
@@ -33,15 +43,16 @@ export default function App() {
           <Skeleton className="h-[200px] md:h-[335px]" baseColor="#cbcbcb" />
         ) : (
           <div ref={sliderRef} className="keen-slider">
-            <div className="keen-slider__slide number-slide1">
-              <SliderImage />
-            </div>
-            <div className="keen-slider__slide number-slide1">
-              <SliderImage />
-            </div>
-            <div className="keen-slider__slide number-slide1">
-              <SliderImage />
-            </div>
+            {items.map((slide) => (
+              <div className="keen-slider__slide number-slide1">
+                <SliderImage
+                  title={slide.title}
+                  buttonTitle={slide.buttonTitle}
+                  image={slide.desktopImage}
+                  mobileImage={slide.mobileImage}
+                />
+              </div>
+            ))}
           </div>
         )}
 

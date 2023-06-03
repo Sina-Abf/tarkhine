@@ -16,6 +16,7 @@ import Search from '../search';
 import { ModalContext } from '@/store/modal-context';
 import MobileSiderbar from './mobile-sidebar';
 import DropdownMenu from '../dropdown';
+import Link from 'next/link';
 
 const DATA = [
   {
@@ -29,19 +30,19 @@ const DATA = [
     children: [
       {
         name: 'اکباتان',
-        href: '/ekbatan',
+        href: 'branch/ekbatan',
       },
       {
         name: 'چالوس',
-        href: '/ekbatan',
+        href: 'branch/chaloos',
       },
       {
         name: 'اقدسیه',
-        href: '/ekbatan',
+        href: 'branch/aghdasieh',
       },
       {
         name: 'ونک',
-        href: '/ekbatan',
+        href: 'branch/vanak',
       },
     ],
     route: '#',
@@ -114,7 +115,9 @@ const Header = () => {
             </button>
           </li>
           <li>
-            <Image priority src={Logo} alt="Logo" />
+            <Link href="/">
+              <Image priority src={Logo} alt="Logo" />
+            </Link>
           </li>
           <div className="hidden md:flex justify-center gap-x-4">
             {DATA.map((item) => {

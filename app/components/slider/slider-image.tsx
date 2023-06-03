@@ -1,36 +1,46 @@
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 import bgDesktop from '../../../public/images/slider/slider-desktop.png';
 import bgMobile from '../../../public/images/slider/slider-mobile.png';
 import { Button } from '../common/button';
 
-const SliderImage = () => {
+const SliderImage = ({
+  image,
+  title,
+  buttonTitle,
+  mobileImage,
+}: {
+  image?: StaticImageData;
+  mobileImage?: StaticImageData;
+  title?: string;
+  buttonTitle?: string;
+}) => {
   return (
     <>
       <div className="relative ">
         <Image
           className="hidden sliderSize:block"
           height={1500}
-          src={bgDesktop}
+          src={image!}
           alt="desktop-food-picture"
           priority
         />
         <Image
           className="sliderSize:hidden"
           height={1500}
-          src={bgMobile}
+          src={mobileImage!}
           alt="mobile-food-picture"
           priority
         />
 
         <div className=" flex flex-col items-center">
           <h2 className="text-2xl top-[35%] whitespace-nowrap sm:text-3xl lg:text-5xl font-bold absolute right-1/2 translate-x-1/2">
-            تجربه غذای سالم و گیاهی به سبک ترخینه
+            {title}
           </h2>
           <Button
             size="small"
             className="absolute md:text-3xl md:px-8 md:py-4 top-[60%] right-1/2 translate-x-1/2 lg:top-[60%]"
           >
-            سفارش آنلاین غذا
+            {buttonTitle}
           </Button>
         </div>
       </div>
