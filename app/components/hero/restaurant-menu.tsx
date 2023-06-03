@@ -38,17 +38,18 @@ const RestaurantMenu = () => {
         {DATA.map(({ image, name, id }) => (
           <li
             key={id}
-            className="shadow-xl flex flex-col justify-center items-center border-2 rounded-xl border-primary p-2 md:w-[18rem] md:h-[15rem] xl:w-[25rem] mb-32 md:mb-20"
+            className="shadow-xl flex flex-col justify-center items-center border-2 rounded-xl border-primary p-2 md:w-[18rem] md:h-[10rem] xl:w-[25rem] mb-20"
           >
             <Image
               width={150}
               height={150}
-              className="w-auto h-auto -mt-[50%]"
+              className="-mt-[50%]"
               src={image}
               alt={name}
             />
+
             <Button
-              className="md:w-[10rem] md:h-[4rem] w-[8rem] h-[4rem] translate-y-[50%] md:translate-y-[80%] xl:translate-y-[50%] md:py-2"
+              className="md:w-[10rem] w-[8rem] py-2 translate-y-[50%] md:translate-y-[50%] xl:translate-y-[100%]"
               variant="primary"
               size="medium"
             >
