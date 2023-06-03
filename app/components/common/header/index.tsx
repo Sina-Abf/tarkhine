@@ -15,6 +15,7 @@ import Modal from '../modal';
 import Search from '../search';
 import { ModalContext } from '@/store/modal-context';
 import MobileSiderbar from './mobile-sidebar';
+import DropdownMenu from '../dropdown';
 
 const DATA = [
   {
@@ -25,13 +26,47 @@ const DATA = [
   },
   {
     name: 'شعبه',
-    children: [{}],
+    children: [
+      {
+        name: 'اکباتان',
+        href: '/ekbatan',
+      },
+      {
+        name: 'چالوس',
+        href: '/ekbatan',
+      },
+      {
+        name: 'اقدسیه',
+        href: '/ekbatan',
+      },
+      {
+        name: 'ونک',
+        href: '/ekbatan',
+      },
+    ],
     route: '#',
     id: '2',
   },
   {
     name: 'منو',
-    children: [{}],
+    children: [
+      {
+        name: 'غذای اصلی',
+        href: '/ekbatan',
+      },
+      {
+        name: 'پیش غذا',
+        href: '/ekbatan',
+      },
+      {
+        name: 'دسر',
+        href: '/ekbatan',
+      },
+      {
+        name: 'نوشیدنی',
+        href: '/ekbatan',
+      },
+    ],
     route: '#',
     id: '3',
   },
@@ -83,6 +118,14 @@ const Header = () => {
           </li>
           <div className="hidden md:flex justify-center gap-x-4">
             {DATA.map((item) => {
+              if (item.children.length)
+                return (
+                  <DropdownMenu
+                    buttonTitle={item.name}
+                    menuItems={item.children}
+                  />
+                );
+
               return (
                 <li key={item.id} className="md:text-2xl ">
                   <ActiveLink
