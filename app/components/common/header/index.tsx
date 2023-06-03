@@ -124,6 +124,7 @@ const Header = () => {
               if (item.children.length)
                 return (
                   <DropdownMenu
+                    key={item.id}
                     buttonTitle={item.name}
                     menuItems={item.children}
                   />

@@ -11,18 +11,21 @@ const SLIDER_DATA = [
     mobileImage: bgMobile,
     title: 'تجربه غذای سالم و گیاهی به سبک ترخینه',
     buttonTitle: 'سفارش آنلاین غذا',
+    id: 1,
   },
   {
     desktopImage: bgDesktop,
     mobileImage: bgMobile,
     title: 'تجربه غذای سالم و گیاهی به سبک ترخینه',
     buttonTitle: 'سفارش آنلاین غذا',
+    id: 2,
   },
   {
     desktopImage: bgDesktop,
     mobileImage: bgMobile,
     title: 'تجربه غذای سالم و گیاهی به سبک ترخینه',
     buttonTitle: 'سفارش آنلاین غذا',
+    id: 3,
   },
 ];
 

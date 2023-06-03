@@ -13,6 +13,7 @@ interface TSlider {
     mobileImage: StaticImageData;
     title: string;
     buttonTitle: string;
+    id: number;
   }[];
 }
 
@@ -44,7 +45,7 @@ export default function Slider({ items }: TSlider) {
         ) : (
           <div ref={sliderRef} className="keen-slider">
             {items.map((slide) => (
-              <div className="keen-slider__slide number-slide1">
+              <div key={slide.id} className="keen-slider__slide number-slide1">
                 <SliderImage
                   title={slide.title}
                   buttonTitle={slide.buttonTitle}

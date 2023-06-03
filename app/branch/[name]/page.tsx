@@ -8,18 +8,21 @@ const SLIDER_DATA = [
     mobileImage: mobileImage,
     title: 'سرسبزی اکباتان دلیل حس خوب شماست!',
     buttonTitle: 'سفارش آنلاین غذا',
+    id: 1,
   },
   {
     desktopImage: ekbatanImage,
     mobileImage: mobileImage,
     title: 'سرسبزی اکباتان دلیل حس خوب شماست!',
     buttonTitle: 'سفارش آنلاین غذا',
+    id: 2,
   },
   {
     desktopImage: ekbatanImage,
     mobileImage: mobileImage,
     title: 'سرسبزی اکباتان دلیل حس خوب شماست!',
     buttonTitle: 'سفارش آنلاین غذا',
+    id: 3,
   },
 ];
 
