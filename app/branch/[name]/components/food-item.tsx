@@ -42,6 +42,7 @@ const FoodItem = ({
             alt={name}
             width={500}
             height={100}
+            priority
           />
         </div>
 

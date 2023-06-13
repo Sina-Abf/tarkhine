@@ -19,13 +19,7 @@ const button = cva('button', {
         'transition-all',
         'duration-300',
       ],
-      transparent: [
-        'border',
-        'text-white',
-        'rounded-lg',
-        'transition-all',
-        'duration-300',
-      ],
+      transparent: ['border', 'rounded-lg', 'transition-all', 'duration-300'],
     },
     size: {
       small: ['text-xl', 'py-2', 'px-4'],
