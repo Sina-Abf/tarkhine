@@ -1,15 +1,12 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import { useKeenSlider } from 'keen-slider/react';
 import 'keen-slider/keen-slider.min.css';
-import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import Image from 'next/image';
 import { LeftArrowIcon, StarIcon } from '@/public/icons';
-// @ts-ignore
-import NumberToPersianWord from 'number_to_persian_word';
 import useDynamicScroll from '@/hooks/use-dynamic-scroll';
 import classNames from 'classnames';
+import persianNumber from '@/helpers/persian-number';
 
 interface CSlider {
   items: {
@@ -70,7 +67,7 @@ const CommentsSlider = ({ items }: CSlider) => {
                     </div>
                   </div>
                   <span className="text-2xl">
-                    {NumberToPersianWord.convertEnToPe(slide.star_count)}
+                    {persianNumber(slide.star_count)}
                   </span>
                 </div>
               </div>

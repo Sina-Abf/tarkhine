@@ -1,16 +1,13 @@
 'use client';
 import { InstagramIcon, TelegramIcon, TwitterIcon } from '@/public/icons';
 import { ChangeEvent, useState } from 'react';
-// @ts-ignore
-import NumberToPersianWord from 'number_to_persian_word';
 import Input from './input';
+import persianNumber from '@/helpers/persian-number';
 
 const Footer = () => {
   const [wordCount, setWordCount] = useState('۰');
   const changeEventHandler = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setWordCount(
-      NumberToPersianWord.convertEnToPe(e.target.value.trim().length)
-    );
+    setWordCount(persianNumber(e.target.value.trim().length));
   };
   return (
     <footer className="footer-image pb-20">

@@ -1,10 +1,9 @@
 import { Button } from '@/app/components/common/button';
+import persianNumber from '@/helpers/persian-number';
 import { HeartIcon, StarIcon } from '@/public/icons';
 import { TFoods } from '@/utils/get-foods';
 import classNames from 'classnames';
 import Image from 'next/image';
-// @ts-ignore
-import NumberToPersianWord from 'number_to_persian_word';
 
 const FoodItem = ({
   image,
@@ -16,13 +15,11 @@ const FoodItem = ({
   foodItemClassName,
 }: TFoods) => {
   // Persian Numbers
-  const persianOriginalPrice = NumberToPersianWord.convertEnToPe(
-    (+price).toFixed(3)
-  );
-  const persianDiscount = NumberToPersianWord.convertEnToPe(discount_percent);
-  const persianScore = NumberToPersianWord.convertEnToPe(score);
-  const persianAllScores = NumberToPersianWord.convertEnToPe(all_scores);
-  const persianFinalPrice = NumberToPersianWord.convertEnToPe(
+  const persianOriginalPrice = persianNumber((+price).toFixed(3));
+  const persianDiscount = persianNumber(discount_percent);
+  const persianScore = persianNumber(score);
+  const persianAllScores = persianNumber(all_scores);
+  const persianFinalPrice = persianNumber(
     Math.floor(+price - +discount_percent / 100).toString() + ',000'
   );
   // Persian Numbers
