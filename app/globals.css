@@ -17,6 +17,7 @@ html {
 
 .navigation-wrapper {
   position: relative;
+  overflow: visible;
 }
 
 .dot {

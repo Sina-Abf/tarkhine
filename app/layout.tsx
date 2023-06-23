@@ -46,7 +46,7 @@ export default function RootLayout({
       <Providers>
         <ModalContextProvider>
           <body
-            className={`${estedadFont.className} mx-auto w-full max-w-screen-2xl`}
+            className={`${estedadFont.className} mx-auto w-full max-w-screen-[2000px]`}
           >
             <Header />
             <main>{children}</main>

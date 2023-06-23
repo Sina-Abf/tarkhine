@@ -4,8 +4,8 @@ import getFoods from '@/utils/get-foods';
 import FoodItem from './food-item';
 import Skeleton from 'react-loading-skeleton';
 import { LeftArrowIcon } from '@/public/icons';
-import { useRef } from 'react';
 import classNames from 'classnames';
+import useDynamicScroll from '@/hooks/use-dynamic-scroll';
 
 const FoodRow = ({
   title,
@@ -20,42 +20,44 @@ const FoodRow = ({
   foodItemClassName?: string;
   url: string;
 }) => {
+  // Food Data
   const { data, isLoading } = getFoods(url);
+
   // Dummy Array to have loading state for each food
   const loadingData = new Array(data?.length ?? 8).fill(null);
 
-  // const sliderRef = useRef(null);
-
-  // const slideLeft = () => {
-  //   // @ts-ignore
-  //   sliderRef.current.scrollLeft = sliderRef.current.scrollLeft - 500;
-  // };
-  // const slideRight = () => {
-  //   // @ts-ignore
-  //   sliderRef.current.scrollLeft = sliderRef.current.scrollLeft + 500;
-  // };
+  // Dynamic Scrolling Logic
+  const { scrollPosition, slideLeft, slideRight, sliderRef } =
+    useDynamicScroll();
 
   return (
-    <div className={classNames('mb-10', className)}>
-      <h2 className={classNames('text-4xl font-bold my-8', titleClassName)}>
+    <div className={classNames('mb-10 px-10', className)}>
+      <h2 className={classNames('text-4xl font-bold my-8 p-4', titleClassName)}>
         {title || 'عنوان'}
       </h2>
       <ul
-        // ref={sliderRef}
-        className="relative flex gap-8 overflow-x-scroll no-scrollbar"
+        ref={sliderRef}
+        className="relative flex gap-8 overflow-x-scroll no-scrollbar transition-all duration-300 scroll-smooth"
       >
-        {/* <button
+        <button
           onClick={slideLeft}
-          className="w-[30px] h-[30px] fill-gray-6 bg-white shadow-lg rounded-lg p-1 left-8 absolute top-1/2 -translate-y-1/2"
+          className={classNames(
+            'hidden md:block w-[30px] h-[30px] fill-gray-6 shadow-lg rounded-lg p-1 absolute left-0 top-1/2 -translate-y-1/2 bg-white'
+          )}
+          style={{ left: `${scrollPosition}px` }}
         >
           <LeftArrowIcon />
         </button>
         <button
           onClick={slideRight}
-          className="w-[30px] h-[30px] fill-gray-6 bg-white shadow-lg rounded-lg p-1 right-8 absolute top-1/2 -translate-y-1/2"
+          className={classNames(
+            'hidden md:block w-[30px] h-[30px] fill-gray-6 bg-white shadow-lg rounded-lg p-1 absolute top-1/2 -translate-y-1/2',
+            scrollPosition === 0 ? 'hidden' : 'block'
+          )}
+          style={{ right: `${-scrollPosition}px` }}
         >
           <LeftArrowIcon className="rotate-180" />
-        </button> */}
+        </button>
         {isLoading
           ? loadingData.map((_, index) => (
               <Skeleton

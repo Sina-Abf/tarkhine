@@ -9,17 +9,18 @@ const SliderImage = ({
   buttonTitle,
   mobileImage,
 }: {
-  image?: StaticImageData;
-  mobileImage?: StaticImageData;
+  image?: string;
+  mobileImage?: string;
   title?: string;
   buttonTitle?: string;
 }) => {
   return (
     <>
-      <div className="relative ">
+      <div className="relative">
         <Image
           className="hidden sliderSize:block"
           height={1500}
+          width={3000}
           src={image!}
           alt="desktop-food-picture"
           priority
@@ -27,6 +28,7 @@ const SliderImage = ({
         <Image
           className="sliderSize:hidden"
           height={1500}
+          width={3000}
           src={mobileImage!}
           alt="mobile-food-picture"
           priority

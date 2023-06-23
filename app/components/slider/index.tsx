@@ -5,12 +5,11 @@ import 'keen-slider/keen-slider.min.css';
 import SliderImage from './slider-image';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import { StaticImageData } from 'next/image';
 
 interface TSlider {
   items: {
-    desktopImage: StaticImageData;
-    mobileImage: StaticImageData;
+    desktopImage: string;
+    mobileImage: string;
     title: string;
     buttonTitle: string;
     id: number;

@@ -10,88 +10,104 @@ import {
 } from '@/public/icons';
 import ActiveLink from '@/helpers/active-link';
 import { Button } from '../button';
-import { useContext, useState } from 'react';
+import { useContext, useMemo, useState } from 'react';
 import Modal from '../modal';
 import Search from '../search';
 import { ModalContext } from '@/store/modal-context';
 import MobileSiderbar from './mobile-sidebar';
 import DropdownMenu from '../dropdown';
 import Link from 'next/link';
-
-const DATA = [
-  {
-    name: 'صفحه اصلی',
-    children: [],
-    route: '/',
-    id: '1',
-  },
-  {
-    name: 'شعبه',
-    children: [
-      {
-        name: 'اکباتان',
-        href: 'branch/ekbatan',
-      },
-      {
-        name: 'چالوس',
-        href: 'branch/chaloos',
-      },
-      {
-        name: 'اقدسیه',
-        href: 'branch/aghdasieh',
-      },
-      {
-        name: 'ونک',
-        href: 'branch/vanak',
-      },
-    ],
-    route: '#',
-    id: '2',
-  },
-  {
-    name: 'منو',
-    children: [
-      {
-        name: 'غذای اصلی',
-        href: '/ekbatan',
-      },
-      {
-        name: 'پیش غذا',
-        href: '/ekbatan',
-      },
-      {
-        name: 'دسر',
-        href: '/ekbatan',
-      },
-      {
-        name: 'نوشیدنی',
-        href: '/ekbatan',
-      },
-    ],
-    route: '#',
-    id: '3',
-  },
-  {
-    name: 'اعطای نمایندگی',
-    children: [],
-    route: '#',
-    id: '4',
-  },
-  {
-    name: 'درباره ما',
-    children: [],
-    route: '#',
-    id: '5',
-  },
-  {
-    name: 'تماس با ما',
-    children: [],
-    route: '#',
-    id: '6',
-  },
-];
+import { usePathname } from 'next/navigation';
 
 const Header = () => {
+  const pathname = usePathname();
+  // this is for having active link on children
+  const branchName =
+    pathname === '/branch/ekbatan'
+      ? 'اکباتان'
+      : pathname === '/branch/chaloos'
+      ? 'چالوس'
+      : pathname === '/branch/aghdasieh'
+      ? 'اقدسیه'
+      : pathname === '/branch/vanak'
+      ? 'ونک'
+      : 'شعبه';
+
+  const DATA = useMemo(() => {
+    return [
+      {
+        name: 'صفحه اصلی',
+        children: [],
+        route: '/',
+        id: '1',
+      },
+      {
+        name: branchName,
+        children: [
+          {
+            name: 'اکباتان',
+            href: 'branch/ekbatan',
+          },
+          {
+            name: 'چالوس',
+            href: 'branch/chaloos',
+          },
+          {
+            name: 'اقدسیه',
+            href: 'branch/aghdasieh',
+          },
+          {
+            name: 'ونک',
+            href: 'branch/vanak',
+          },
+        ],
+        route: '#',
+        id: '2',
+      },
+      {
+        name: 'منو',
+        children: [
+          {
+            name: 'غذای اصلی',
+            href: '/ekbatan',
+          },
+          {
+            name: 'پیش غذا',
+            href: '/ekbatan',
+          },
+          {
+            name: 'دسر',
+            href: '/ekbatan',
+          },
+          {
+            name: 'نوشیدنی',
+            href: '/ekbatan',
+          },
+        ],
+        route: '#',
+        id: '3',
+      },
+      {
+        name: 'اعطای نمایندگی',
+        children: [],
+        route: '#',
+        id: '4',
+      },
+      {
+        name: 'درباره ما',
+        children: [],
+        route: '#',
+        id: '5',
+      },
+      {
+        name: 'تماس با ما',
+        children: [],
+        route: '#',
+        id: '6',
+      },
+    ];
+  }, [branchName]);
+
   const { isModalOpen, openModalHandler } = useContext(ModalContext);
   const [mobileSidebarShow, setMobileSiderbarShow] = useState(false);
   return (

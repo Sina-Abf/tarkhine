@@ -2,27 +2,25 @@ import About from './components/about/index';
 import Branches from './components/branches/index';
 import Hero from './components/hero/index';
 import Slider from './components/slider/index';
-import bgDesktop from '../public/images/slider/slider-desktop.png';
-import bgMobile from '../public/images/slider/slider-mobile.png';
 
 const SLIDER_DATA = [
   {
-    desktopImage: bgDesktop,
-    mobileImage: bgMobile,
+    desktopImage: '/images/slider/slider-desktop.png',
+    mobileImage: '/images/slider/slider-mobile.png',
     title: 'تجربه غذای سالم و گیاهی به سبک ترخینه',
     buttonTitle: 'سفارش آنلاین غذا',
     id: 1,
   },
   {
-    desktopImage: bgDesktop,
-    mobileImage: bgMobile,
+    desktopImage: '/images/slider/slider-desktop.png',
+    mobileImage: '/images/slider/slider-mobile.png',
     title: 'تجربه غذای سالم و گیاهی به سبک ترخینه',
     buttonTitle: 'سفارش آنلاین غذا',
     id: 2,
   },
   {
-    desktopImage: bgDesktop,
-    mobileImage: bgMobile,
+    desktopImage: '/images/slider/slider-desktop.png',
+    mobileImage: '/images/slider/slider-mobile.png',
     title: 'تجربه غذای سالم و گیاهی به سبک ترخینه',
     buttonTitle: 'سفارش آنلاین غذا',
     id: 3,
