@@ -18,7 +18,7 @@ const FoodsSection = ({
   const loadingData = new Array(data?.length ?? 20).fill(null);
 
   return (
-    <section className="max-w-2xl md:max-w-screen-xl mx-auto px-4 pb-4">
+    <section className="max-w-2xl md:max-w-screen-xl mx-auto px-4 pb-4 mb-8">
       <div className="mb-8 flex justify-between items-center">
         <h2 className="font-bold text-3xl">{sectionTitle}</h2>
         {index === 0 && (
