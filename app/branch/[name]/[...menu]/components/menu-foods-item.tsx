@@ -7,19 +7,18 @@ import { TMenuFoods } from '@/utils/get-menu-foods';
 import Image from 'next/image';
 
 const MenuFoodsItem = ({
-  all_scores,
   discount_percent,
   food_items,
   food_name,
   image,
   price,
   stars,
-  id,
+  isLoading,
 }: TMenuFoods) => {
   const afterDiscountPrice = persianNumber(+price - +discount_percent);
   return (
     <li className="flex rounded-lg border max-w-screen-xl border-gray-4 hover:shadow-lg transition-all duration-300 cursor-pointer">
-      <div className="bg-red-400">
+      <div className="">
         <Image
           className="md:hidden h-full object-cover"
           src={image}

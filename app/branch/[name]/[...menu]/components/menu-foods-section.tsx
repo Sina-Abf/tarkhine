@@ -3,6 +3,7 @@ import { Button } from '@/app/components/common/button';
 import { CartIcon } from '@/public/icons';
 import getMenuFoods from '@/utils/get-menu-foods';
 import MenuFoodsItem from './menu-foods-item';
+import MenuFoodsItemSkeleton from './menu-foods-item-skeleton';
 
 const FoodsSection = ({
   sectionTitle,
@@ -14,6 +15,7 @@ const FoodsSection = ({
   index: number;
 }) => {
   const { data, isLoading } = getMenuFoods(url);
+  const loadingData = new Array(data?.length ?? 20).fill(null);
 
   return (
     <section className="max-w-2xl md:max-w-screen-xl mx-auto px-4 pb-4">
@@ -32,9 +34,13 @@ const FoodsSection = ({
         )}
       </div>
       <ul className="max-w-2xl md:max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
-        {data?.map((food) => (
-          <MenuFoodsItem {...food} />
-        ))}
+        {isLoading
+          ? loadingData.map((_, index) => (
+              <MenuFoodsItemSkeleton isLoading={isLoading} />
+            ))
+          : data?.map((food) => (
+              <MenuFoodsItem {...food} isLoading={isLoading} />
+            ))}
       </ul>
     </section>
   );

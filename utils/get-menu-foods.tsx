@@ -9,6 +9,7 @@ export interface TMenuFoods {
   stars: string;
   all_scores: string;
   id?: number;
+  isLoading: boolean
 }
 
 const fetchMenuFoods = async (param: string) => {
