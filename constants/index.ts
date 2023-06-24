@@ -78,3 +78,39 @@ export const BRANCH_COMMENTS = [
     id: 4,
   },
 ];
+
+export const FOOD_TAGS = [
+  {
+    name: 'غذا های ایرانی',
+  },
+  {
+    name: 'غذا های غیر ایرانی',
+  },
+  {
+    name: 'پیتزاها',
+  },
+  {
+    name: 'ساندویچ ها',
+  },
+  {
+    name: 'پرفروش ترین ها',
+  },
+];
+export const MENU_ROW_DATA = [
+  {
+    title: 'غذاهای ایرانی',
+    url: 'iranian-foods',
+  },
+  {
+    title: 'غذا های غیر ایرانی',
+    url: 'foregion-foods',
+  },
+  {
+    title: 'پیتزاها',
+    url: 'pizzas',
+  },
+  {
+    title: 'ساندویچ ها',
+    url: 'sandwitches',
+  },
+];

@@ -46,19 +46,19 @@ const Header = () => {
         children: [
           {
             name: 'اکباتان',
-            href: 'branch/ekbatan',
+            href: '/branch/ekbatan',
           },
           {
             name: 'چالوس',
-            href: 'branch/chaloos',
+            href: '/branch/chaloos',
           },
           {
             name: 'اقدسیه',
-            href: 'branch/aghdasieh',
+            href: '/branch/aghdasieh',
           },
           {
             name: 'ونک',
-            href: 'branch/vanak',
+            href: '/branch/vanak',
           },
         ],
         route: '#',

@@ -11,7 +11,7 @@ interface TSlider {
     desktopImage: string;
     mobileImage: string;
     title: string;
-    buttonTitle: string;
+    buttonTitle?: string;
     id: number;
   }[];
 }

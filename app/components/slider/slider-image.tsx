@@ -38,12 +38,14 @@ const SliderImage = ({
           <h2 className="text-2xl top-[35%] whitespace-nowrap sm:text-3xl lg:text-5xl font-bold absolute right-1/2 translate-x-1/2">
             {title}
           </h2>
-          <Button
-            size="small"
-            className="absolute md:text-3xl md:px-8 md:py-4 top-[60%] right-1/2 translate-x-1/2 lg:top-[60%]"
-          >
-            {buttonTitle}
-          </Button>
+          {buttonTitle && (
+            <Button
+              size="small"
+              className="absolute md:text-3xl md:px-8 md:py-4 top-[60%] right-1/2 translate-x-1/2 lg:top-[60%]"
+            >
+              {buttonTitle}
+            </Button>
+          )}
         </div>
       </div>
     </>
