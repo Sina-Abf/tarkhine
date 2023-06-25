@@ -5,21 +5,24 @@ import { LeftArrowIcon } from '@/public/icons';
 import { useModalStoreActions } from '@/store/use-modal-store';
 import classNames from 'classnames';
 import { usePathname } from 'next/navigation';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 
 const MobileSiderbarItem = ({
   route,
   icon,
   name,
   child,
+  setMobileSiderbarShow,
 }: {
   route?: string;
   icon: React.ReactNode;
   name: string;
   child?: { title: string; route: string }[];
+  setMobileSiderbarShow: Dispatch<SetStateAction<boolean>>;
 }) => {
   const [childShow, setChildShow] = useState(false);
   const pathname = usePathname();
+  console.log(pathname);
   const branchNameIncludes = pathname
     .split('/')
     .some(
@@ -31,6 +34,18 @@ const MobileSiderbarItem = ({
     );
 
   const { toggleBranchModalVisible } = useModalStoreActions();
+
+  // Closing sidebar when route changes
+  const isMounted = useRef(false);
+  const prevPathname = useRef(pathname);
+
+  useEffect(() => {
+    if (isMounted.current && pathname !== prevPathname.current) {
+      setMobileSiderbarShow(false);
+    }
+    prevPathname.current = pathname;
+    isMounted.current = true;
+  }, [pathname]);
 
   return (
     <li className="md:text-2xl py-2">
@@ -86,7 +101,7 @@ const MobileSiderbarItem = ({
             !branchNameIncludes && !item.route.includes('/branch') ? (
               <div
                 key={item.title}
-                className="cursor-pointer hover:bg-gray-3 py-3 transition-colors duration-300 text-xl p-2 pr-4 w-[12rem]"
+                className="cursor-pointer hover:bg-gray-3 transition-colors duration-300 p-2 text-xl mx-8 py-4"
                 onClick={() => toggleBranchModalVisible(true)}
               >
                 {item.title}

@@ -32,80 +32,78 @@ const Header = () => {
       ? 'ونک'
       : 'شعبه';
 
-  const DATA = useMemo(() => {
-    return [
-      {
-        name: 'صفحه اصلی',
-        children: [],
-        route: '/',
-        id: '1',
-      },
-      {
-        name: branchName,
-        children: [
-          {
-            name: 'اکباتان',
-            href: '/branch/ekbatan',
-          },
-          {
-            name: 'چالوس',
-            href: '/branch/chaloos',
-          },
-          {
-            name: 'اقدسیه',
-            href: '/branch/aghdasieh',
-          },
-          {
-            name: 'ونک',
-            href: '/branch/vanak',
-          },
-        ],
-        route: '#',
-        id: '2',
-      },
-      {
-        name: 'منو',
-        children: [
-          {
-            name: 'غذای اصلی',
-            href: '/main-food',
-          },
-          {
-            name: 'پیش غذا',
-            href: '/before-food',
-          },
-          {
-            name: 'دسر',
-            href: '/dessert',
-          },
-          {
-            name: 'نوشیدنی',
-            href: '/drink',
-          },
-        ],
-        route: '#',
-        id: '3',
-      },
-      {
-        name: 'اعطای نمایندگی',
-        children: [],
-        route: '#',
-        id: '4',
-      },
-      {
-        name: 'درباره ما',
-        children: [],
-        route: '#',
-        id: '5',
-      },
-      {
-        name: 'تماس با ما',
-        children: [],
-        route: '#',
-        id: '6',
-      },
-    ];
-  }, [branchName]);
+  const DATA = [
+    {
+      name: 'صفحه اصلی',
+      children: [],
+      route: '/',
+      id: '1',
+    },
+    {
+      name: branchName,
+      children: [
+        {
+          name: 'اکباتان',
+          href: '/branch/ekbatan',
+        },
+        {
+          name: 'چالوس',
+          href: '/branch/chaloos',
+        },
+        {
+          name: 'اقدسیه',
+          href: '/branch/aghdasieh',
+        },
+        {
+          name: 'ونک',
+          href: '/branch/vanak',
+        },
+      ],
+      route: '#',
+      id: '2',
+    },
+    {
+      name: 'منو',
+      children: [
+        {
+          name: 'غذای اصلی',
+          href: '/main-food',
+        },
+        {
+          name: 'پیش غذا',
+          href: '/before-food',
+        },
+        {
+          name: 'دسر',
+          href: '/dessert',
+        },
+        {
+          name: 'نوشیدنی',
+          href: '/drink',
+        },
+      ],
+      route: '#',
+      id: '3',
+    },
+    {
+      name: 'اعطای نمایندگی',
+      children: [],
+      route: '#',
+      id: '4',
+    },
+    {
+      name: 'درباره ما',
+      children: [],
+      route: '#',
+      id: '5',
+    },
+    {
+      name: 'تماس با ما',
+      children: [],
+      route: '#',
+      id: '6',
+    },
+  ];
 
   const { toggleSearchModalVisible } = useModalStoreActions();
   const [mobileSidebarShow, setMobileSiderbarShow] = useState(false);

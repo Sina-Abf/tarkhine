@@ -119,6 +119,7 @@ const MobileSiderbar = ({
                 route={item.route}
                 child={item.children}
                 key={item.id}
+                setMobileSiderbarShow={setMobileSiderbarShow}
               />
             );
           })}
