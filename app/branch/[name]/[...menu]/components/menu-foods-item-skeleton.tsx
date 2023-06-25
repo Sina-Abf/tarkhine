@@ -1,7 +1,3 @@
-import { Button } from '@/app/components/common/button';
-import Stars from '@/app/components/common/stars';
-import persianNumber from '@/helpers/persian-number';
-import { HeartIcon } from '@/public/icons';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 

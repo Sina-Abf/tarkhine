@@ -42,6 +42,7 @@ function DropdownMenu({ buttonTitle, menuItems }: TDropdown) {
         </Menu.Button>
 
         <Menu.Items className="absolute overflow-hidden mt-4 divide-y flex flex-col bg-white shadow-inner rounded-xl z-50">
+          {/* if user has not selected any branch, it shows modal to pick one first */}
           {menuItems.map((item) =>
             !branchNameIncludes && !item.href.includes('/branch') ? (
               <Menu.Item key={item.name}>
@@ -56,7 +57,7 @@ function DropdownMenu({ buttonTitle, menuItems }: TDropdown) {
               <Menu.Item key={item.name}>
                 <Link
                   className="hover:bg-gray-3 py-3 transition-colors duration-300 text-xl p-2 pr-4 w-[12rem]"
-                  href={item.href}
+                  href={`/branch/${pathname.split('/')[2]}${item.href}`}
                 >
                   {item.name}
                 </Link>

@@ -1,15 +1,18 @@
 import classNames from 'classnames';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { MouseEventHandler } from 'react';
 
 const ActiveLink = ({
   children,
   href,
   className,
+  onClick,
 }: {
   children: React.ReactNode;
   href: string;
   className?: string;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 }) => {
   const pathname = usePathname();
 
@@ -22,6 +25,7 @@ const ActiveLink = ({
   return (
     <Link
       href={href}
+      onClick={onClick}
       className={classNames(
         'text-gray-7',
         href === pathname && 'text-primary font-bold underline',

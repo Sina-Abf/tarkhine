@@ -17,6 +17,7 @@ interface TModal {
 export default function Modal(props: TModal) {
   const pathname = usePathname();
 
+  // For closing modal on pathname change
   useEffect(() => {
     props.toggleModalVisible(false);
   }, [pathname]);

@@ -1,7 +1,6 @@
 import { Button } from '@/app/components/common/button';
 import Stars from '@/app/components/common/stars';
 import persianNumber from '@/helpers/persian-number';
-import PersianNumber from '@/helpers/persian-number';
 import { HeartIcon } from '@/public/icons';
 import { TMenuFoods } from '@/utils/get-menu-foods';
 import classNames from 'classnames';
@@ -65,7 +64,7 @@ const MenuFoodsItem = ({
         </div>
 
         <div className="mb-2 flex justify-between items-center">
-          <p className="md:text-xl">{food_items.join(',')}...</p>
+          <p className="md:text-xl">{food_items?.join(',')}...</p>
           {/* Desktop */}
           <div className="space-x-2 items-center hidden md:flex">
             {discount_percent && (

@@ -7,11 +7,10 @@ import {
   CallIcon,
   CloseIcon,
   HomeIcon,
-  LeftArrowIcon,
   MenuIcon,
 } from '@/public/icons';
-import { Dispatch, SetStateAction, memo } from 'react';
-import ActiveLink from '@/helpers/active-link';
+import { Dispatch, SetStateAction } from 'react';
+import MobileSiderbarItem from './mobile-sidebar-item';
 
 const DATA = [
   {
@@ -24,15 +23,47 @@ const DATA = [
   {
     icon: <MenuIcon />,
     name: 'منو',
-    children: [{}],
-    route: '#',
+    children: [
+      {
+        title: 'غذای اصلی',
+        route: '/menu/main-food',
+      },
+      {
+        title: 'پیش غذا',
+        route: '/menu/before-food',
+      },
+      {
+        title: 'دسر',
+        route: '/menu/dessert',
+      },
+      {
+        title: 'نوشیدنی',
+        route: '/menu/drink',
+      },
+    ],
     id: 2,
   },
   {
     icon: <BranchIcon />,
     name: 'شعبه',
-    children: [{}],
-    route: '#',
+    children: [
+      {
+        title: 'اکباتان',
+        route: '/branch/ekbatan',
+      },
+      {
+        title: 'ونک',
+        route: '/branch/vanak',
+      },
+      {
+        title: 'اقدسیه',
+        route: '/branch/aghdasieh',
+      },
+      {
+        title: 'چالوس',
+        route: '/branch/chaloos',
+      },
+    ],
     id: 3,
   },
   {
@@ -82,24 +113,13 @@ const MobileSiderbar = ({
         <div className="p-4 space-y-5 divide-y-2">
           {DATA.map((item) => {
             return (
-              <li key={item.id} className="md:text-2xl py-2">
-                <ActiveLink
-                  className="flex items-center gap-4"
-                  href={item.route}
-                >
-                  <span className="w-[20px] h-[20px] fill-black">
-                    {item.icon}
-                  </span>
-                  <span className="text-2xl flex gap-x-1 items-center justify-between w-full">
-                    {item.name}
-                    {item.children.length ? (
-                      <span className="w-[20px] h-[20px] ml-4 fill-gray-7 -rotate-90">
-                        <LeftArrowIcon />
-                      </span>
-                    ) : null}
-                  </span>
-                </ActiveLink>
-              </li>
+              <MobileSiderbarItem
+                icon={item.icon}
+                name={item.name}
+                route={item.route}
+                children={item.children}
+                key={item.id}
+              />
             );
           })}
         </div>

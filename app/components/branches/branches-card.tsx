@@ -24,16 +24,16 @@ const BranchesCard = ({
   return (
     <li
       className={classNames(
-        'hover:shadow-xl cursor-pointer text-center transition-all duration-300 hover:scale-95 max-w-2xl w-full mx-auto overflow-hidden flex md:flex-col border-2 border-gray-4 rounded-lg group',
+        'hover:shadow-xl list-none cursor-pointer text-center transition-all duration-300 hover:scale-95 max-w-2xl w-full mx-auto overflow-hidden border-2 border-gray-4 rounded-lg group',
         className
       )}
     >
-      <Link href={href}>
-        <div className="flex-1">
+      <Link className="flex md:flex-col h-full" href={href}>
+        <div className="flex-1 h-full">
           <Image
-            className="md:w-full h-full object-cover"
-            width={200}
-            height={200}
+            className="md:w-full object-cover h-full"
+            width={250}
+            height={250}
             src={image}
             alt={branch_name}
           />
