@@ -42,7 +42,7 @@ const MobileSiderbarItem = ({
           <span className="w-[20px] h-[20px] fill-black">{icon}</span>
           <span className="text-2xl flex gap-x-1 items-center justify-between w-full">
             {name}
-            {children?.length ? (
+            {child?.length ? (
               <>
                 <span
                   className={classNames(
@@ -65,7 +65,7 @@ const MobileSiderbarItem = ({
           <span className="w-[20px] h-[20px] fill-black">{icon}</span>
           <span className="text-2xl flex gap-x-1 items-center justify-between w-full">
             {name}
-            {children?.length ? (
+            {child?.length ? (
               <>
                 <span
                   className={classNames(
@@ -82,7 +82,7 @@ const MobileSiderbarItem = ({
       )}
       <div className="divide-y-2">
         {childShow &&
-          children?.map((item) =>
+          child?.map((item) =>
             !branchNameIncludes && !item.route.includes('/branch') ? (
               <div
                 key={item.title}
