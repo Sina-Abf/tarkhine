@@ -117,7 +117,7 @@ const MobileSiderbar = ({
                 icon={item.icon}
                 name={item.name}
                 route={item.route}
-                children={item.children}
+                child={item.children}
                 key={item.id}
               />
             );

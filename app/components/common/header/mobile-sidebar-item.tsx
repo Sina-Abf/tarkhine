@@ -11,12 +11,12 @@ const MobileSiderbarItem = ({
   route,
   icon,
   name,
-  children,
+  child,
 }: {
   route?: string;
   icon: React.ReactNode;
   name: string;
-  children?: { title: string; route: string }[];
+  child?: { title: string; route: string }[];
 }) => {
   const [childShow, setChildShow] = useState(false);
   const pathname = usePathname();
@@ -85,6 +85,7 @@ const MobileSiderbarItem = ({
           children?.map((item) =>
             !branchNameIncludes && !item.route.includes('/branch') ? (
               <div
+                key={item.title}
                 className="cursor-pointer hover:bg-gray-3 py-3 transition-colors duration-300 text-xl p-2 pr-4 w-[12rem]"
                 onClick={() => toggleBranchModalVisible(true)}
               >
