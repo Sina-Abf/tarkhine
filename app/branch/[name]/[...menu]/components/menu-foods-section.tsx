@@ -36,10 +36,10 @@ const FoodsSection = ({
       <ul className="max-w-2xl md:max-w-full mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6">
         {isLoading
           ? loadingData.map((_, index) => (
-              <MenuFoodsItemSkeleton isLoading={isLoading} />
+              <MenuFoodsItemSkeleton key={index} isLoading={isLoading} />
             ))
           : data?.map((food) => (
-              <MenuFoodsItem {...food} isLoading={isLoading} />
+              <MenuFoodsItem key={food.id} {...food} isLoading={isLoading} />
             ))}
       </ul>
     </section>

@@ -10,15 +10,14 @@ import {
 } from '@/public/icons';
 import ActiveLink from '@/helpers/active-link';
 import { Button } from '../button';
-import { useContext, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Modal from '../modal';
 import Search from '../search';
-import { ModalContext } from '@/store/modal-context';
 import MobileSiderbar from './mobile-sidebar';
 import DropdownMenu from '../dropdown';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-
+import { useModalStoreActions } from '@/store/use-modal-store';
 const Header = () => {
   const pathname = usePathname();
   // this is for having active link on children
@@ -69,19 +68,19 @@ const Header = () => {
         children: [
           {
             name: 'غذای اصلی',
-            href: '/ekbatan',
+            href: '/main-food',
           },
           {
             name: 'پیش غذا',
-            href: '/ekbatan',
+            href: '/before-food',
           },
           {
             name: 'دسر',
-            href: '/ekbatan',
+            href: '/dessert',
           },
           {
             name: 'نوشیدنی',
-            href: '/ekbatan',
+            href: '/drink',
           },
         ],
         route: '#',
@@ -108,18 +107,10 @@ const Header = () => {
     ];
   }, [branchName]);
 
-  const { isModalOpen, openModalHandler } = useContext(ModalContext);
+  const { toggleSearchModalVisible } = useModalStoreActions();
   const [mobileSidebarShow, setMobileSiderbarShow] = useState(false);
   return (
     <header className="">
-      {isModalOpen && (
-        <Modal
-          className="hidden md:block"
-          title="جستجو"
-          content={<Search />}
-          description="لطفا متن خود را تایپ و سپس دکمه Enter را بزنید."
-        />
-      )}
       <nav>
         {mobileSidebarShow && (
           <MobileSiderbar setMobileSiderbarShow={setMobileSiderbarShow} />
@@ -136,7 +127,7 @@ const Header = () => {
             </Link>
           </li>
           <div className="hidden md:flex justify-center gap-x-4">
-            {DATA.map((item) => {
+            {DATA.map((item, index) => {
               if (item.children.length)
                 return (
                   <DropdownMenu
@@ -167,7 +158,7 @@ const Header = () => {
             <Button
               variant="secondary"
               className="p-2 fill-primary hover:fill-white w-[30px] h-[30px] md:w-[40px] md:h-[40px] md:p-3 hidden md:block"
-              onClick={() => openModalHandler()}
+              onClick={() => toggleSearchModalVisible(true)}
             >
               <SearchIcon />
             </Button>

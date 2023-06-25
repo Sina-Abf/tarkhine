@@ -1,9 +1,9 @@
-import ModalContextProvider from '@/store/modal-context';
 import Footer from './components/common/footer';
 import Header from './components/common/header';
 import './globals.css';
 import localFont from 'next/font/local';
 import Providers from '@/utils/query-provider';
+import AllModals from './components/common/all-modals';
 
 const estedadFont = localFont({
   src: [
@@ -43,17 +43,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fa" dir="rtl">
+      {/* React Query Provider */}
       <Providers>
-        <ModalContextProvider>
-          <body
-            className={`${estedadFont.className} mx-auto w-full max-w-screen-[2000px]`}
-          >
-            <Header />
-            <main>{children}</main>
-            <Footer />
-          </body>
-        </ModalContextProvider>
+        <body
+          className={`${estedadFont.className} mx-auto w-full max-w-screen-[2000px]`}
+        >
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <AllModals />
+        </body>
       </Providers>
+      {/* React Query Provider */}
     </html>
   );
 }

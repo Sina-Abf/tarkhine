@@ -6,7 +6,10 @@ const FoodTags = ({ data }: { data: { name: string }[] }) => {
       <div className="flex gap-x-8 overflow-hidden overflow-x-scroll no-scrollbar px-4">
         {data.map((tag) => {
           return (
-            <div className="bg-gray-3 text-gray-8 w-full rounded-2xl text-center whitespace-nowrap p-2 font-semibold text-lg">
+            <div
+              key={tag.name}
+              className="bg-gray-3 text-gray-8 w-full rounded-2xl text-center whitespace-nowrap p-2 font-semibold text-lg"
+            >
               {tag.name}
             </div>
           );

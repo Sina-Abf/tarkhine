@@ -34,7 +34,7 @@ const CommentsSlider = ({ items }: CSlider) => {
       <div className="w-full pb-8">
         <ul
           ref={sliderRef}
-          className="relative pb-8 mx-auto w-full flex gap-x-12 px-8 md:px-40 overflow-hidden overflow-x-scroll no-scroll scroll-smooth"
+          className="relative pb-8 mx-auto w-full flex gap-x-12 px-8 md:px-40 overflow-hidden overflow-x-scroll no-scrollbar scroll-smooth"
         >
           {items.map((slide, i) => (
             <li

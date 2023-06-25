@@ -79,6 +79,38 @@ export const BRANCH_COMMENTS = [
   },
 ];
 
+export const BRANCH_CARDS = [
+  {
+    branch_name: 'شعبه اکباتان',
+    address: 'شهرک اکباتان، فاز ۳، مجتمع تجاری کوروش، طبقه سوم',
+    image: '/images/branches/Ekbatan.png',
+    href: '/branch/ekbatan',
+    id: 1,
+  },
+  {
+    branch_name: 'شعبه چالوس',
+    address:
+      'چالوس، خیابان ۱۷ شهریور، بعد کوچه کوروش، جنب داروخانه دکتر میلانی',
+    image: '/images/branches/Chaloos.png',
+    href: '/branch/chaloos',
+    id: 2,
+  },
+  {
+    branch_name: 'شعبه اقدسیه',
+    address: 'خیابان اقدسیه ، نرسیده به میدان خیام، پلاک ۸',
+    image: '/images/branches/Aghdasieh.png',
+    href: '/branch/aghdasieh',
+    id: 3,
+  },
+  {
+    branch_name: 'شعبه ونک',
+    address: 'میدان ونک، خیابان فردوسی، نبش کوچه نیلوفر، پلاک ۲۶',
+    image: '/images/branches/Vanak.png',
+    href: '/branch/vanak',
+    id: 4,
+  },
+];
+
 export const FOOD_TAGS = [
   {
     name: 'غذا های ایرانی',
