@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 interface TModal {
   title: string;
   description: string;
-  content: React.ReactNode;
+  children: React.ReactNode;
   className?: string;
   contentClassName?: string;
   modalClassName?: string;
@@ -62,7 +62,7 @@ export default function Modal(props: TModal) {
             <Dialog.Description
               className={classNames('', props.contentClassName)}
             >
-              {props.content}
+              {props.children}
             </Dialog.Description>
           </Dialog.Panel>
         </div>

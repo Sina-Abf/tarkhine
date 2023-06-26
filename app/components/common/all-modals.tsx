@@ -23,7 +23,10 @@ const AllModals = () => {
         toggleModalVisible={toggleBranchModalVisible}
         contentClassName="flex flex-col gap-y-4 p-8 md:flex-row gap-x-8"
         modalClassName="w-[90%] sm:w-fit"
-        content={BRANCH_CARDS.map((card) => (
+        description="برای دیدن منوی رستوران، لطفا شعبه مدنظر خود را انتخاب کنید:"
+        title="انتخاب شعبه"
+      >
+        {BRANCH_CARDS.map((card) => (
           <BranchesCard
             address={card.address}
             branch_name={card.branch_name}
@@ -34,9 +37,7 @@ const AllModals = () => {
             className="h-[10rem] md:h-full"
           />
         ))}
-        description="برای دیدن منوی رستوران، لطفا شعبه مدنظر خود را انتخاب کنید:"
-        title="انتخاب شعبه"
-      />
+      </Modal>
       {/* Branch Modal */}
 
       {/* Search Modal */}
@@ -45,9 +46,10 @@ const AllModals = () => {
         toggleModalVisible={toggleSearchModalVisible}
         className="hidden md:block"
         title="جستجو"
-        content={<Search />}
         description="لطفا متن خود را تایپ و سپس دکمه Enter را بزنید."
-      />
+      >
+        <Search />
+      </Modal>
       {/* Search Modal */}
     </>
   );
